@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <!-- Link to CRUD css file -->
+        <link rel="stylesheet" href="CRUD.css" type="text/css"></link>
+        <!-- Project/Page title -->
+        <title>CRUD to-do list</title>
+    </head>
+
+    <body>
+        <!-- Main title -->
+        <header>
+            <h1>CRUD To-Do List:</h1>
+            <h3 id="caption">(Create, Read, Update, Delete)</h3>
+        </header>
+
+        <!-- groups the to-do list together -->
+        <section class="form">
+            <h2 id="title">TO-DO LIST:</h2>
+            <!-- This form will take in/add new to-do items -->
+            <form action="javascript:void(0);" method="POST" onsubmit="app.Add()">
+                <!-- Take input from user-->
+                <input type="text" id="add-todo" placeholder="Thing To-Do">
+                <!-- Saves input -->
+                <input type="submit" value="Add" class="button" id="add-button">    
+            </form>
+            <p>You Have:</p>
+            <p id="counter"></p>
+            <table>
+                <tr class="to-do">
+                    <th>
+                        <h3>To-Do:</h3>
+                    </th>
+                </tr>
+                <tbody id="tasks">
+
+                </tbody>
+            </table>
+        </section>
+
+        <!--  -->
+        <section id="edit-box" role="aria-hidden">
+            <form action="javascript:void(0);" method="POST" id="save-edit">
+                <input type="text" id="edit-todo">
+                <input type="submit" value="Save" class="button" id="save-button">
+                <a onclick="CloseInput()" aria-label="Close">&#10006;</a>
+            </form>
+        </section>
+        
+
+    <script src="CRUD.js"></script>
+    </body>
+</html>
